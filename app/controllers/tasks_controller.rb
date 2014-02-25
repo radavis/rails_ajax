@@ -1,16 +1,14 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
-  # GET /tasks
-  # GET /tasks.json
+  # GET /tasks.{html, js}
   def index
     #@tasks = Task.all
     @complete_tasks = Task.where(complete: true)
     @incomplete_tasks = Task.where(complete: false)
   end
 
-  # GET /tasks/1
-  # GET /tasks/1.json
+  # GET /tasks/1.{html, js}
   def show
   end
 
@@ -23,8 +21,7 @@ class TasksController < ApplicationController
   def edit
   end
 
-  # POST /tasks
-  # POST /tasks.json
+  # POST /tasks.{html, js}
   def create
     @task = Task.new(task_params)
 
@@ -40,8 +37,7 @@ class TasksController < ApplicationController
     end
   end
 
-  # PATCH/PUT /tasks/1
-  # PATCH/PUT /tasks/1.json
+  # PATCH/PUT /tasks/1.{html, js}
   def update
     respond_to do |format|
       if @task.update(task_params)
@@ -55,8 +51,7 @@ class TasksController < ApplicationController
     end
   end
 
-  # DELETE /tasks/1
-  # DELETE /tasks/1.json
+  # DELETE /tasks/1.{html, js}
   def destroy
     @task.destroy
     respond_to do |format|
