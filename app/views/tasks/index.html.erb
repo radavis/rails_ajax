@@ -1,29 +1,13 @@
-<h1>Listing tasks</h1>
+<h1>Checklist</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Complete</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<%= link_to 'New Task', new_task_path, id: 'new_task_link', remote: true %>
 
-  <tbody>
-    <% @tasks.each do |task| %>
-      <tr>
-        <td><%= task.name %></td>
-        <td><%= task.complete %></td>
-        <td><%= link_to 'Show', task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<h2>Incomplete Tasks</h2>
+<div class="tasks" id="incomplete_tasks">
+  <%= render @incomplete_tasks %>
+</div>
 
-<br>
-
-<%= link_to 'New Task', new_task_path %>
+<h2>Complete Tasks</h2>
+<div class="tasks" id="complete_tasks">
+  <%= render @complete_tasks %>
+</div>
