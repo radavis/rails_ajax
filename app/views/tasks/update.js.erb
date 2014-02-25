@@ -1,0 +1,2 @@
+$('form#edit_task_<%= @task.id %>').remove();
+$('div#complete_tasks').append('<%= j render(@task) %>');
