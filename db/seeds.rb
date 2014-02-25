@@ -11,7 +11,9 @@ todo = [
   ['wash dishes', false], 
   ['hijack bus', false],
   ['clean room', true],
-  ['make dinner', false]
+  ['make dinner', false],
+  ['sell bitcoin', false],
+  ['buy dogecoin', false]
 ]
 
 todo.each do |task_name, completed|
